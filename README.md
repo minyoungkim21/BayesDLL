@@ -1,5 +1,4 @@
-# BayesDLL
-### Bayesian Deep Learning Library
+# BayesDLL: Bayesian Deep Learning Library
 
 We release a new Bayesian neural network library for PyTorch for large-scale deep networks. Our library implements mainstream approximate Bayesian inference algorithms: **variational inference**, **MC-dropout**, **stochastic-gradient MCMC**, and **Laplace approximation**. The main differences from other existing Bayesian neural network libraries are as follows: 
 **1)** Our library can deal with very large-scale deep networks including Vision Transformers (ViTs). 
