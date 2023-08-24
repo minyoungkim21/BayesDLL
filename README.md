@@ -58,59 +58,59 @@ python demo_mnist.py --dataset mnist --backbone mlp_mnist --val_heldout 0.5 --me
 ```
 
 
-### 2) Flowers (val_heldout = 0.5, network = resnet101, pretrained = IMAGENET1K_V1)
+### 2) Pets (val_heldout = 0.5, network = resnet101, pretrained = IMAGENET1K_V1)
 
 * Vanilla (no Bayesian) -- weight decay = 1e-4, bias treatment = "penalty"
 ```
-python demo_vision.py --dataset flowers --val_heldout 0.5 --backbone resnet101 --pretrained IMAGENET1K_V1 --method vanilla --hparams wd=1e-4,bias=penalty --epochs 200 --lr 1e-4 --lr_head 1e-2 --batch_size 16 --momentum 0.5 
+python demo_vision.py --dataset pets --val_heldout 0.5 --backbone resnet101 --pretrained IMAGENET1K_V1 --method vanilla --hparams wd=1e-4,bias=penalty --epochs 100 --lr 1e-4 --lr_head 1e-2 --batch_size 16 --momentum 0.5 
 ```
 
 * Variational Inference -- prior sigma = 1.0, kl discount = 1e-6, bias treatment = "informative", nst = 5
 ```
-python demo_vision.py --dataset flowers --val_heldout 0.5 --backbone resnet101 --pretrained IMAGENET1K_V1 --method vi --hparams prior_sig=1.0,kld=1e-6,bias=informative,nst=5 --epochs 200 --lr 1e-4 --lr_head 1e-2 --batch_size 16 --momentum 0.5 
+python demo_vision.py --dataset pets --val_heldout 0.5 --backbone resnet101 --pretrained IMAGENET1K_V1 --method vi --hparams prior_sig=1.0,kld=1e-6,bias=informative,nst=5 --epochs 100 --lr 1e-4 --lr_head 1e-2 --batch_size 16 --momentum 0.5 
 ```
 
 * MC-Dropout -- prior sigma = 1.0, drop prob = 0.1, kl discount = 1e-3, bias treatment = "gaussian q", nst = 5
 ```
-python demo_vision.py --dataset flowers --val_heldout 0.5 --backbone resnet101 --pretrained IMAGENET1K_V1 --method mc_dropout --hparams prior_sig=1.0,p_drop=0.1,kld=1e-3,bias=gaussian,nst=5 --epochs 200 --lr 1e-4 --lr_head 1e-2 --batch_size 16 --momentum 0.5
+python demo_vision.py --dataset pets --val_heldout 0.5 --backbone resnet101 --pretrained IMAGENET1K_V1 --method mc_dropout --hparams prior_sig=1.0,p_drop=0.1,kld=1e-3,bias=gaussian,nst=5 --epochs 100 --lr 1e-4 --lr_head 1e-2 --batch_size 16 --momentum 0.5
 ```
 
 * SGLD -- prior sigma = 1.0, N-inflation = 1e3, nd=0.01, burnin = 50 epochs, thin = 10 iters, bias treatment = "informative", nst = 5
 ```
-python demo_vision.py --dataset flowers --val_heldout 0.5 --backbone resnet101 --pretrained IMAGENET1K_V1 --method sgld --hparams prior_sig=1.0,Ninflate=1e3,nd=0.01,burnin=50,thin=10,bias=informative,nst=5 --epochs 200 --lr 1e-4 --lr_head 1e-2 --batch_size 16 --momentum 0.5
+python demo_vision.py --dataset pets --val_heldout 0.5 --backbone resnet101 --pretrained IMAGENET1K_V1 --method sgld --hparams prior_sig=1.0,Ninflate=1e3,nd=0.01,burnin=50,thin=10,bias=informative,nst=5 --epochs 100 --lr 1e-4 --lr_head 1e-2 --batch_size 16 --momentum 0.5
 ```
 
 * Laplace approximation -- prior sigma = 1.0, N-inflation = 1e3, bias treatment = "informative", nst = 0
 ```
-python demo_vision.py --dataset flowers --val_heldout 0.5 --backbone resnet101 --pretrained IMAGENET1K_V1 --method la --hparams prior_sig=1.0,Ninflate=1e3,bias=informative,nst=0 --epochs 200 --lr 1e-4 --lr_head 1e-2 --batch_size 16 --momentum 0.5
+python demo_vision.py --dataset pets --val_heldout 0.5 --backbone resnet101 --pretrained IMAGENET1K_V1 --method la --hparams prior_sig=1.0,Ninflate=1e3,bias=informative,nst=0 --epochs 100 --lr 1e-4 --lr_head 1e-2 --batch_size 16 --momentum 0.5
 ```
 
 
-### 3) Flowers (val_heldout = 0.5, network = vit_l_32, pretrained = IMAGENET1K_V1)
+### 3) Pets (val_heldout = 0.5, network = vit_l_32, pretrained = IMAGENET1K_V1)
 
 * Vanilla (no Bayesian) -- weight decay = 1e-4, bias treatment = "penalty"
 ```
-python demo_vision.py --dataset flowers --val_heldout 0.5 --backbone vit_l_32 --pretrained IMAGENET1K_V1 --method vanilla --hparams wd=1e-4,bias=penalty --epochs 200 --lr 1e-4 --lr_head 1e-2 --batch_size 16 --momentum 0.5
+python demo_vision.py --dataset pets --val_heldout 0.5 --backbone vit_l_32 --pretrained IMAGENET1K_V1 --method vanilla --hparams wd=1e-4,bias=penalty --epochs 100 --lr 1e-4 --lr_head 1e-2 --batch_size 16 --momentum 0.5
 ```
 
 * Variational Inference -- prior sigma = 1.0, kl discount = 1e-6, bias treatment = "informative", nst = 5
 ```
-python demo_vision.py --dataset flowers --val_heldout 0.5 --backbone vit_l_32 --pretrained IMAGENET1K_V1 --method vi --hparams prior_sig=1.0,kld=1e-6,bias=informative,nst=5 --epochs 200 --lr 1e-4 --lr_head 1e-2 --batch_size 16 --momentum 0.5
+python demo_vision.py --dataset pets --val_heldout 0.5 --backbone vit_l_32 --pretrained IMAGENET1K_V1 --method vi --hparams prior_sig=1.0,kld=1e-6,bias=informative,nst=5 --epochs 100 --lr 1e-4 --lr_head 1e-2 --batch_size 16 --momentum 0.5
 ```
 
 * MC-Dropout -- prior sigma = 1.0, drop prob = 0.1, kl discount = 1e-3, bias treatment = "gaussian q", nst = 5
 ```
-python demo_vision.py --dataset flowers --val_heldout 0.5 --backbone vit_l_32 --pretrained IMAGENET1K_V1 --method mc_dropout --hparams prior_sig=1.0,p_drop=0.1,kld=1e-3,bias=gaussian,nst=5 --epochs 200 --lr 1e-4 --lr_head 1e-2 --batch_size 16 --momentum 0.5
+python demo_vision.py --dataset pets --val_heldout 0.5 --backbone vit_l_32 --pretrained IMAGENET1K_V1 --method mc_dropout --hparams prior_sig=1.0,p_drop=0.1,kld=1e-3,bias=gaussian,nst=5 --epochs 100 --lr 1e-4 --lr_head 1e-2 --batch_size 16 --momentum 0.5
 ```
 
 * SGLD -- prior sigma = 1.0, N-inflation = 1e3, nd=0.01, burnin = 50 epochs, thin = 10 iters, bias treatment = "informative", nst = 5
 ```
-python demo_vision.py --dataset flowers --val_heldout 0.5 --backbone vit_l_32 --pretrained IMAGENET1K_V1 --method sgld --hparams prior_sig=1.0,Ninflate=1e3,nd=0.01,burnin=50,thin=10,bias=informative,nst=5 --epochs 200 --lr 1e-4 --lr_head 1e-2 --batch_size 16 --momentum 0.5
+python demo_vision.py --dataset pets --val_heldout 0.5 --backbone vit_l_32 --pretrained IMAGENET1K_V1 --method sgld --hparams prior_sig=1.0,Ninflate=1e3,nd=0.01,burnin=50,thin=10,bias=informative,nst=5 --epochs 100 --lr 1e-4 --lr_head 1e-2 --batch_size 16 --momentum 0.5
 ```
 
 * Laplace approximation -- prior sigma = 1.0, N-inflation = 1e3, bias treatment = "informative", nst = 0
 ```
-python demo_vision.py --dataset flowers --val_heldout 0.5 --backbone vit_l_32 --pretrained IMAGENET1K_V1 --method la --hparams prior_sig=1.0,Ninflate=1e3,bias=informative,nst=0 --epochs 200 --lr 1e-4 --lr_head 1e-2 --batch_size 16 --momentum 0.5
+python demo_vision.py --dataset pets --val_heldout 0.5 --backbone vit_l_32 --pretrained IMAGENET1K_V1 --method la --hparams prior_sig=1.0,Ninflate=1e3,bias=informative,nst=0 --epochs 100 --lr 1e-4 --lr_head 1e-2 --batch_size 16 --momentum 0.5
 ```
 
 
