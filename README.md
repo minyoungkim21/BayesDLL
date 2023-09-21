@@ -30,7 +30,7 @@ We release a new Bayesian neural network library for PyTorch for large-scale dee
 
 ## Pseudocodes
 
-![plot](./figure/pseudocode.html.pdf)
+![plot](./figures/pseudocode.html.pdf)
 
 
 ## Usage examples (Actual codes)
