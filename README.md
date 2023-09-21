@@ -28,12 +28,10 @@ We release a new Bayesian neural network library for PyTorch for large-scale dee
  *In case you want to use other deep neural networks, you may need to install related libraries accordingly (eg, ```huggingface```'s ```transformers``` or Ross Wightman's ```timm```)*
 
 
-## Pseudocodes
-
-![plot](./figures/pseudocode.html.pdf)
-
 
 ## Usage examples (Actual codes)
+
+[Pseudocodes](./figures/pseudocode.html.pdf)
 
 ### 1) MNIST (val_heldout = 0.5, network = MLP)
 
